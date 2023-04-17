@@ -61,6 +61,9 @@ def scrape_text_with_selenium(url: str) -> Tuple[WebDriver, str]:
     }
 
     options = options_available[CFG.selenium_web_browser]()
+    options.add_argument("--no-sandbox")
+    options.add_argument("--headless")
+    options.add_argument("--disable-dev-shm-usage")
     options.add_argument(
         "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.5615.49 Safari/537.36"
     )
